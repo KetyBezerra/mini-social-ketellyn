@@ -1,19 +1,19 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #000;
-  color: #fff;
+  background-color: #e5e2e7;
+  color: #751b99e1;
 }
 
 header {
   text-align: center;
   padding: 20px;
-  border-bottom: 1px solid #1f3d2b;
+  border-bottom: 1px solid #ffffff;
 }
 
 .logo {
   font-family: 'Pacifico', cursive;
-  color: #d4af37;
+  color: #891dd1;
   font-size: 40px;
 }
 
@@ -23,10 +23,10 @@ header {
 }
 
 .post {
-  background-color: #0f1f16;
+  background-color: hsla(240, 8%, 95%, 0.808);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px #0f1f16;
+  box-shadow: 0 0 10px #4c16a3;
 }
 
 .post-header {
@@ -49,11 +49,11 @@ header {
 
 .name {
   font-weight: bold;
-  color: #d4af37;
+  color: #a6a6e7;
 }
 
 .username {
-  color: #888;
+  color: #a89cbb;
   margin-left: 5px;
 }
 
@@ -66,8 +66,8 @@ header {
 }
 
 button {
-  background-color: #1f3d2b;
-  color: #fff;
+  background-color: #702080;
+  color: #343b64;
   border: none;
   padding: 8px 15px;
   border-radius: 20px;
@@ -75,11 +75,11 @@ button {
 }
 
 button:hover {
-  background-color: #2e5c40;
+  background-color: #392750;
 }
 
 .comments {
-  border-top: 1px solid #1f3d2b;
+  border-top: 1px solid #9371e2;
   padding-top: 15px;
 }
 
