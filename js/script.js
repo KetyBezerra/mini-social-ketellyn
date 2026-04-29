@@ -1,37 +1,63 @@
-let likeCount = 0;
-let curtido = false; // flag booleana
+//=== ESTADO (dados da aplicação) ===
 
-let deslikeCount = 0;
-let descurtido = false; // flag boolena
+let likeCount = 0;
+let dislikeCount = 0;
+let curtido = false;
+let descurtido = false;
+
+// SERVICE (regras de negócios) === 
 
 function curtir() {
+  if (curtido == false){
+    likeCount++;
+    curtido = true;
+    document.getElementById("likeCount").innerText = likeCount;
 
- if (curtido == false){
-   likeCount++;
-   curtido= true;
-   document.getElementById("likeCount").innerText = likeCount;
-}else{
-  likeCount--;
-  curtido = false;
-  document.getElementById("likeCount").innerText = likeCount;
-}
+    if(descurtido == true){
+      dislikeCount--;
+      descurtido = false;
+      document.getElementById("dislikeCount").innerText = dislikeCount;
 
-}
+    }
 
-document.getElementById("likeBtn").addEventListener("click", curtir);
-
-function descurtir() {
- if (descurtido == false){
-     deslikeCount++;
-     descurtido = true;
-    document.getElementById("deslikeCount").innerText = deslikeCount;
   }else{
-    deslikeCount--;
-    descurtido = false;
-    document.getElementById("deslikeCount").innerText = deslikeCount;
+    likeCount--;
+    curtido = false;
+    document.getElementById("likeCount").innerText = likeCount;
   }
 
 }
 
-document.getElementById("likeBtn").addEventListener("click", curtir);
-document.getElementById("deslikeBtn").addEventListener("click", descurtir);
+function descurtir() {
+  if(descurtido == false){
+    dislikeCount++;
+    descurtido = true;
+    document.getElementById("dislikeCount").innerText = dislikeCount;
+
+    if(curtido == true){
+      likeCount--;
+      curtido = false;
+      document.getElementById("likeCount").innerText = likeCount;
+    }
+
+  }
+  else{
+    dislikeCount--;
+    descurtido = false;
+    document.getElementById("dislikeCount").innerText = dislikeCount;
+  }
+}
+
+//=== CONTROLLER (intermediação)===
+
+function clicarCurtir(){
+  curtir ();
+}
+function clicarDescurtir(){
+  descurtir ();
+}
+
+// === EVENTOS ===
+
+document.getElementById("likeBtn").addEventListener("click", clicarCurtir);
+document.getElementById("dislikeBtn").addEventListener("click", clicarDescurtir);
